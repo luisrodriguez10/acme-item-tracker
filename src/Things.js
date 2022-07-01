@@ -6,7 +6,8 @@ const Things = ({ things })=> {
   return (
     <div>
       <h1>Things</h1>
-      <ul>
+      <ThingForm />
+      <ol>
         {
           things.map( thing => {
             return (
@@ -16,8 +17,8 @@ const Things = ({ things })=> {
             );
           })
         }
-      </ul>
-      <ThingForm />
+      </ol>
+      
     </div>
   );
 };
