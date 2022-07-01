@@ -12,6 +12,14 @@ const User = conn.define("user", {
   },
 });
 
+User.addHook('beforeDestroy', async(user) =>{
+  await Thing.destroy({
+      where:{
+          userId: user.id
+      }
+  });
+});
+
 User.hasMany(Thing);
 
 
