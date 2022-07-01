@@ -20,6 +20,7 @@ User.addHook('beforeDestroy', async(user) =>{
   });
 });
 
+Thing.belongsTo(User);
 User.hasMany(Thing);
 
 
