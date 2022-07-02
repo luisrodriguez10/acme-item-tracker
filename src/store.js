@@ -31,6 +31,27 @@ const store = createStore((state = initialState, action)=> {
     const things = state.things.filter(_thing => _thing.userId !== action.user.id);
     return {...state, users, things}; 
   }
+  if(action.type === 'INCREASE_RANKING'){
+    let newThings = [];
+    state.things.map(_thing => {
+      if(_thing.id === action.newThing.id){
+        _thing.ranking = action.newThing.ranking
+      }
+      newThings.push(_thing);
+    })
+    return {...state, things: newThings}; 
+  }
+  if(action.type === 'DECREASE_RANKING'){
+    let newThings = [];
+    state.things.map(_thing => {
+      if(_thing.id === action.newThing.id){
+        _thing.ranking = action.newThing.ranking
+      }
+      newThings.push(_thing);
+    })
+    return {...state, things: newThings}; 
+  }
+
   return state;
 });
 
