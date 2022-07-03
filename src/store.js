@@ -51,6 +51,18 @@ const store = createStore((state = initialState, action)=> {
     })
     return {...state, things: newThings}; 
   }
+  if(action.type === 'UPDATE_USER'){
+    let newThings = [];
+    state.things.map(_thing => {
+      if(_thing.id === action.updatedThing.id){
+        _thing.userId = action.updatedThing.userId;
+
+      }
+      newThings.push(_thing)
+    })
+
+    return {...state, things: newThings}
+  }
 
   return state;
 });

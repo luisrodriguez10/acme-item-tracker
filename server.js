@@ -81,6 +81,10 @@ app.delete('/api/things/:id', async(req, res, next)=> {
   }
 });
 
+app.use((err, req ,res, next) => {
+  res.status(err.status || 500).send({ message: err.message });
+})
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, ()=> console.log(`listening on port ${port}`));

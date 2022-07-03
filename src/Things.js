@@ -3,7 +3,7 @@ import ThingForm from './ThingForm';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-const Things = ({ things, deleteThing, users, increaseRating, decreaseRating })=> {
+const Things = ({ things, deleteThing, users, increaseRating, decreaseRating, updateUser })=> {
   return (
     <div>
       <h1>Things</h1>
@@ -17,11 +17,14 @@ const Things = ({ things, deleteThing, users, increaseRating, decreaseRating })=
                 <button onClick={() => {increaseRating(thing)}}>+</button>
                 <button onClick={() => {decreaseRating(thing)}}>-</button>
                 owned by
-                <select defaultValue={thing.userId} >
+                <select defaultValue={thing.userId ? thing.userId: ''} onChange={(ev) => updateUser(ev, thing)}>
+                  <option value={0}>-- No onwer --</option>
                   {
+                    
                     users.map(user => {
                       return (
-                        thing.userId ? <option value={user.id} key={user.id}>{user.name}</option> : <option key={user.id}>-- No owner --</option>
+                          <option value={user.id} key={user.id}>{user.name}</option>
+                        
                       )
                     })
                   }
@@ -66,6 +69,14 @@ const mapDispatchToProps = (dispatch) =>{
       dispatch({
         type: 'DECREASE_RANKING',
         newThing
+      })
+    },
+    updateUser: async(ev, thing) =>{
+      const newUserId = ev.target.value*1;
+      const updatedThing = (await axios.put(`/api/things/${thing.id}`, {userId: newUserId ? newUserId : null})).data;
+      dispatch({
+        type: 'UPDATE_USER',
+        updatedThing
       })
     }
   }
