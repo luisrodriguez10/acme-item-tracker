@@ -7,12 +7,15 @@ body{
 nav {
     display: flex;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: center;
     background-color:cadetblue;
+    max-height: 10%;
+    min-height: 40px;
 }
 
 nav a{
     text-decoration: none;
+    color:black;
 }
   
 nav a.selected {
@@ -48,13 +51,17 @@ table {
 table,
 th,
 td {
-    border: 1px solid #222222;
+    border: 1.5px solid #222222;
 }
 
 th,
 td {
   padding: 5px;
   text-align: center;
+}
+
+th{
+    background-color: cadetblue;
 }
 
 tr:hover {
@@ -100,4 +107,9 @@ div#ThingAdd{
 
 p{
     text-align: center;
+    font-weight: bold;
+}
+
+p.thing {
+    font-weight:400;
 }

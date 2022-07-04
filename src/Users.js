@@ -27,7 +27,7 @@ const Users = ({ users, things, deleteUser }) => {
                     {userThings.map((thing) => {
                       return <li key={thing.id}>{thing.name}</li>;
                     })}
-                  </ul> : <p>No things owned</p>}
+                  </ul> : <p className="thing">No things owned</p>}
                   
                 </td>
                 <td>
