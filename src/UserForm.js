@@ -5,7 +5,7 @@ const { faker } = require("@faker-js/faker");
 
 const UserForm = ({ createUser }) => {
   return (
-    <div>
+    <div id="UserAdd">
       <button onClick={createUser}>Add a User</button>
     </div>
   );

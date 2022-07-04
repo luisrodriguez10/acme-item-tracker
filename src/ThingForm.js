@@ -5,7 +5,7 @@ const { faker } = require("@faker-js/faker");
 
 const ThingForm = ({ createThing })=> {
   return (
-    <div>
+    <div id='ThingAdd'>
       <button onClick={ createThing }>Add a Thing</button>
     </div>
   );

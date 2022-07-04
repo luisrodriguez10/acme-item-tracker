@@ -1,6 +1,6 @@
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: beige;
+    background-color:azure;
     padding: 1rem;
 }
 
@@ -8,15 +8,28 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    background-color: aqua;
+    background-color:cadetblue;
+}
+
+nav a{
+    text-decoration: none;
 }
   
 nav a.selected {
     font-weight: bold;
     font-size: 1.5rem;
+    color: azure;
 }
 
 h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
     text-align: center;
 }
 
@@ -28,6 +41,59 @@ li > * {
     margin: 0.25rem;
 }
 
-ol > * {
-    margin: 0.25rem;
+table {
+    border-collapse: collapse;
+  }
+  
+table,
+th,
+td {
+    border: 1px solid #222222;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+#Users {
+    display: flex;
+    flex-direction: column;
+}
+
+div#UserAdd{
+    display: flex;
+    justify-content: center;
+}
+
+#Users > *{
+    margin: 1.25rem;
+}
+
+#Things {
+    display: flex;
+    flex-direction: column;
+}
+
+div#ThingAdd{
+    display: flex;
+    justify-content: center;
+}
+
+#Things > *{
+    margin: 1.25rem;
+}
+
+#Home {
+    display: flex;
+    flex-direction: column;
+}
+
+#Home > *{
+    margin: 1.25rem;
 }

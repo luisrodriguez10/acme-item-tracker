@@ -32,7 +32,11 @@ app.post('/api/users', async(req, res, next)=> {
 
 app.get('/api/things', async(req, res, next)=> {
   try {
-    res.send(await Thing.findAll());
+    res.send(await Thing.findAll({
+      order: [
+        ['userId', 'ASC']
+      ]
+    }));
   }
   catch(ex){
     next(ex);
@@ -41,7 +45,11 @@ app.get('/api/things', async(req, res, next)=> {
 
 app.get('/api/users', async(req, res, next)=> {
   try {
-    res.send(await User.findAll());
+    res.send(await User.findAll({
+      order: [
+        ['name', 'ASC']
+      ]
+    }));
   }
   catch(ex){
     next(ex);

@@ -3,9 +3,9 @@
 - ability to delete a user (DONE)
 - a thing should have ranking which defaults to 1 (display it) (DONE)
 - add the ability to increase or decrease the ranking of a thing (DONE)
-- the home page should show the thing(s) with the highest ranking
+- the home page should show the thing(s) with the highest ranking (DONE)
 - a thing can belong to a user and a user can have many things. In seed logic have some of the things belong to users. (DONE)
 - on the things view display the user who owns it (if they have an owner) (DONE)
   (you don't need an include)
 - on the users view display the things a user owns (DONE)
-- add a select object on the things page for each thing, which allows you to assign the thing to a new user, or no user
+- add a select object on the things page for each thing, which allows you to assign the thing to a new user, or no user (DONE)
