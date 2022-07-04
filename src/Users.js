@@ -23,11 +23,12 @@ const Users = ({ users, things, deleteUser }) => {
               <tr key={user.id}>
                 <td>{user.name}</td>
                 <td>
-                  <ul>
+                  {userThings.length > 0 ? <ul>
                     {userThings.map((thing) => {
                       return <li key={thing.id}>{thing.name}</li>;
                     })}
-                  </ul>
+                  </ul> : <p>No things owned</p>}
+                  
                 </td>
                 <td>
                   <button
