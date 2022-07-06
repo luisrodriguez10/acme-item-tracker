@@ -11,7 +11,7 @@ import { Provider, connect } from 'react-redux';
 const root = createRoot(document.querySelector('#app'));
 
 class _App extends Component{
-  async componentDidMount(){
+  componentDidMount(){
     window.addEventListener('hashchange', ()=> {
       this.props.setView(window.location.hash.slice(1));
     });
@@ -76,7 +76,3 @@ const App = connect(mapStateToProps, mapDispatch)(_App);
 
 
 root.render(<Provider store={ store }><App /></Provider>);
-/*
-const root = document.querySelector('#app');
-render(React.createElement('hr'), root);
-*/
